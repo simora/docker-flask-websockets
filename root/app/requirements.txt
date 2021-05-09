@@ -3,3 +3,4 @@ python-slugify
 Flask
 redis
 rq
+gunicorn
