@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+echo "Starting gunicorn app Server."
+
+cd /app/
+
+exec \
+  python3 mqtt.py
