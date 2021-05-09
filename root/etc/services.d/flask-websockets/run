@@ -5,4 +5,4 @@ echo "Starting gunicorn app Server."
 cd /app/
 
 exec \
-  python3 mqtt.py
+	s6-setuidgid abc gunicorn -b 0.0.0.0:80 main:app

@@ -1,3 +1,0 @@
-hosts:
- - name: localhost
-   type: socket
