@@ -18,7 +18,11 @@ import eventlet
 eventlet.monkey_patch()
 
 app = Flask(__name__)
-socketio = SocketIO(app, message_queue='redis://')
+socketio = SocketIO(
+    app,
+    message_queue='redis://',
+    path='/widget'
+)
 TOPIC = 'event'
 PORT = os.getenv('PORT', 80)
 URL = os.getenv('URL', 'http://localhost')
