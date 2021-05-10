@@ -1,6 +1,7 @@
 pyyaml
 python-slugify
 Flask
+flask-socketio
 redis
 rq
 gunicorn
