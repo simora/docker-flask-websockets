@@ -3,6 +3,4 @@ python-slugify
 Flask
 flask-socketio
 redis
-rq
-gunicorn
 eventlet
