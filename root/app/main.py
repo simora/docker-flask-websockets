@@ -17,15 +17,17 @@ from flask_socketio import SocketIO, emit
 import eventlet
 eventlet.monkey_patch()
 
+TOPIC = 'event'
+PORT = os.getenv('PORT', 80)
+URL = os.getenv('URL', 'http://localhost')
+PATH = os.getenv('PATH', None)
+
 app = Flask(__name__)
 socketio = SocketIO(
     app,
     message_queue='redis://',
-    path='/widget'
+    path=PATH
 )
-TOPIC = 'event'
-PORT = os.getenv('PORT', 80)
-URL = os.getenv('URL', 'http://localhost')
 
 values = {
     'name': 'Widget',
