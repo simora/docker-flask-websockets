@@ -42,7 +42,7 @@ def publish():
     """Posts a message to the pubsub topic"""
     if request.method == "POST":
         data = request.json
-    socketio.emit('message', {'data': data}, namespace=f"/{TOPIC}")
+    socketio.emit('message', {'data': data}, broadcast=True)
     return Response(status=204)
 
 @socketio.on('connect')
