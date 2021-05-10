@@ -20,6 +20,17 @@
             	console.log('Message received', msg);
                 $('textarea#message').val(msg.data);
             });
+
+						socket.on('audio', function(msg) {
+							var audio = document.createElement('audio');
+							audio.style.display = "none";
+							audio.src = msg.audioURL;
+							audio.autoplay = true;
+							audio.onended = function() {
+								audio.remove()
+							};
+							document.body.appendChild(audio);
+						});
 		});
 	</script>
 </head>

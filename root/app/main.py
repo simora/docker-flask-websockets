@@ -2,7 +2,7 @@
 
 # pylint: disable=broad-except
 
-import redis, os
+import redis, os, json
 
 from flask import (
     Flask,
@@ -42,6 +42,8 @@ def publish():
     """Posts a message to the pubsub topic"""
     if request.method == "POST":
         data = request.json
+    if 'audio' in data.keys():
+        socketio.emit('audio', {'audio': data['audio']}, broadcast=True)
     socketio.emit('message', {'data': data}, broadcast=True)
     return Response(status=204)
 
