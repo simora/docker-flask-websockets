@@ -33,7 +33,7 @@ def resource_not_found(exception):
     """Returns exceptions as part of a json."""
     return jsonify(error=str(exception)), 404
 
-@app.route("/")
+@app.route("/widget")
 def home():
     return render_template('index.html', **values)
 
