@@ -3,4 +3,4 @@
 echo "Starting redis-server."
 
 exec \
-	s6-setuidgid redis /usr/bin/redis-server /etc/redis/redis.conf
+	s6-setuidgid redis /usr/bin/redis-server
