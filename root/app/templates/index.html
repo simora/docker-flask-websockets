@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Messages</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			// sending a connect request to the server.
+			var socket = io.connect('{{url}}');
+
+            socket.on('after connect', function(msg){
+            	console.log('After connect', msg);
+            });
+
+            socket.on('message', function(msg) {
+            	console.log('Message received');
+                $('textarea#message').val(msg.data);
+            });
+		});
+	</script>
+</head>
+<body>
+	<div class="container text-center">
+		<h1>Message</h1>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+	</div>
+</body>
+</html>

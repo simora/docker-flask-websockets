@@ -5,4 +5,4 @@ echo "Starting gunicorn app Server."
 cd /app/
 
 exec \
-	s6-setuidgid abc gunicorn -b 0.0.0.0:80 main:app
+	s6-setuidgid abc gunicorn --worker-class eventlet -w 10 main:app
