@@ -2,7 +2,7 @@
 
 # pylint: disable=broad-except
 
-import redis
+import redis, os
 
 from flask import (
     Flask,
