@@ -20,7 +20,7 @@ eventlet.monkey_patch()
 app = Flask(__name__)
 socketio = SocketIO(app, message_queue='redis://')
 TOPIC = 'event'
-PORT = os.getenv(PORT, 80)
+PORT = os.getenv('PORT', 80)
 
 values = {
     'name': 'Widget',
