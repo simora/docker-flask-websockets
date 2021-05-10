@@ -27,7 +27,7 @@ socketio = SocketIO(
     app,
     message_queue='redis://',
     path=WEBSOCKET_PATH,
-    cors_allowed_origins=URL
+    cors_allowed_origins='*'
 )
 
 values = {
