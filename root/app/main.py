@@ -42,6 +42,7 @@ def publish():
     if request.method == "POST":
         data = request.json
     socketio.emit('message', {'data': data}, namespace=f"/{TOPIC}")
+    return Response(status=204)
 
 @socketio.on('connect')
 def test_connect():
