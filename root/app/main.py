@@ -21,10 +21,11 @@ app = Flask(__name__)
 socketio = SocketIO(app, message_queue='redis://')
 TOPIC = 'event'
 PORT = os.getenv('PORT', 80)
+URL = os.getenv('URL', 'http://localhost')
 
 values = {
     'name': 'Widget',
-    'url': 'localhost:5000'
+    'url': URL
 }
 
 @app.errorhandler(404)
