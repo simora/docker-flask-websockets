@@ -10,7 +10,7 @@
 		$(document).ready(function(){
 
 			// sending a connect request to the server.
-			var socket = io.connect('{{url}}', { path: '{{path}}' });
+			var socket = io.connect('{{url}}', { path: '{{path}}/socket.io' });
 
             socket.on('after connect', function(msg){
             	console.log('After connect', msg);
