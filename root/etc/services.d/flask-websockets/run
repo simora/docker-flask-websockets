@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bash
 
-echo "Starting gunicorn app Server."
+echo "Starting flask webserver."
 
 cd /app/
 
 exec \
-	s6-setuidgid abc gunicorn --worker-class eventlet -w 10 main:app
+	/usr/bin/python3 main.py
