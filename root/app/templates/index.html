@@ -24,7 +24,7 @@
 						socket.on('audio', function(msg) {
 							var audio = document.createElement('audio');
 							audio.style.display = "none";
-							audio.src = msg.data.audioURL;
+							audio.src = msg.audioURL;
 							audio.autoplay = true;
 							audio.onended = function() {
 								audio.remove()
