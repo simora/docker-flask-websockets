@@ -20,18 +20,19 @@ eventlet.monkey_patch()
 TOPIC = 'event'
 PORT = os.getenv('PORT', 80)
 URL = os.getenv('URL', 'http://localhost')
-PATH = os.getenv('PATH', None)
+WEBSOCKET_PATH = os.getenv('WEBSOCKET_PATH', None)
 
 app = Flask(__name__)
 socketio = SocketIO(
     app,
     message_queue='redis://',
-    path=PATH
+    path=WEBSOCKET_PATH
 )
 
 values = {
     'name': 'Widget',
-    'url': URL
+    'url': URL,
+    'path': WEBSOCKET_PATH
 }
 
 @app.errorhandler(404)
