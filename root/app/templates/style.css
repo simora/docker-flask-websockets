@@ -23,13 +23,13 @@ body{
 .text-wrapper{
   width: 100%;
   position: relative;
-  margin-top: -40%;
+  margin-top: -60%;
 }
 
 .text-wrapper h1{
   text-align: center;
-  color: #ffffff;
-  font-size: 10vw;
+  color: #000000;
+  font-size: 8vw;
   font-family: 'Goblin One', cursive;
   visibility: hidden;
 }
