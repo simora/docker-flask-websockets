@@ -17,6 +17,7 @@ body{
 
 .content-wrapper img{
   width: 100%;
+  visibility: hidden;
 }
 
 .text-wrapper{
@@ -30,4 +31,5 @@ body{
   color: #ffffff;
   font-size: 10vw;
   font-family: 'Goblin One', cursive;
+  visibility: hidden;
 }

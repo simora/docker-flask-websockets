@@ -25,12 +25,17 @@
             });
 
 						socket.on('audio', function(msg) {
+							$('h1#message').innerHTML = msg.message
+							$('img#pow').style.visibility = "visible"
+							$('h1#message').style.visibility = "visible"
 							var audio = document.createElement('audio');
 							audio.style.display = "none";
 							audio.src = msg.audioURL;
 							audio.autoplay = true;
 							audio.onended = function() {
 								audio.remove()
+								$('img#pow').style.visibility = "hidden"
+								$('h1#message').style.visibility = "hidden"
 							};
 							document.body.appendChild(audio);
 						});
@@ -39,9 +44,9 @@
 </head>
 <body>
 	<div class="content-wrapper">
-		<img src="/static/Pow_01_Red.png">
+		<img id="pow" src="/static/Pow_01_Red.png">
 		<div class="text-wrapper">
-			<h1>Pizza Time</h1>
+			<h1 id="message">Pizza Time</h1>
 		</div>
 	</div>
 </body>
