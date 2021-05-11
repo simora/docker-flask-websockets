@@ -50,8 +50,8 @@ def publish():
     """Posts a message to the pubsub topic"""
     if request.method == "POST":
         data = request.json
-    if 'audioURL' in data.keys():
-        socketio.emit('audio', {'audioURL': data['audioURL']}, broadcast=True)
+    if {'audioURL', 'message' } <= data.keys():
+        socketio.emit('audio', {'audioURL': data['audioURL'], 'message': data['message']}, broadcast=True)
     socketio.emit('message', {'data': data}, broadcast=True)
     return Response(status=204)
 
