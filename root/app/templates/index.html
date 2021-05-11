@@ -24,8 +24,8 @@
             });
 
 						socket.on('audio', function(msg) {
-							var img = document.getElementById('pow')
-							var message = document.getElementById('message')
+							var img = document.getElementById('pow');
+							var message = document.getElementById('message');
 							message.innerHTML = msg.message;
 							message.style.visibility = "visible";
 							img.style.visibility = "visible";
