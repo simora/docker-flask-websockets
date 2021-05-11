@@ -33,6 +33,7 @@
 							audio.style.display = "none";
 							audio.src = msg.audioURL;
 							audio.autoplay = true;
+							audio.play();
 							audio.onended = function() {
 								audio.remove()
 								img.style.visibility = "hidden";
